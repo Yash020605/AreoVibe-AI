@@ -1,0 +1,26 @@
+{
+    "corn": {
+        "Northern Corn Leaf Blight": {
+            "primitives": ["Necrotic-Edges", "Grey-Brown-Lesions", "Cigar-Shaped-Spots"],
+            "description": "Fungal disease causing large, cigar-shaped lesions.",
+            "treatment": "Apply fungicides containing strobilurins or triazoles."
+        },
+        "Common Rust": {
+            "primitives": ["Rusty-Pustules", "Red-Brown-Spots", "Powdery-Spores"],
+            "description": "Fungal infection thriving in cool, moist conditions.",
+            "treatment": "Use rust-resistant hybrids and early fungicide application."
+        }
+    },
+    "tomato": {
+        "Powdery Mildew": {
+            "primitives": ["White-Powder-Film", "Yellowish-Patches", "Leaf-Curling"],
+            "description": "Fungal illness that looks like white powder on leaves.",
+            "treatment": "Apply sulfur-based fungicides and improve air circulation."
+        },
+        "Late Blight": {
+            "primitives": ["Dark-Water-Soaked-Spots", "White-Fuzzy-Growth-Underneath", "Rapid-Browning"],
+            "description": "Aggressive disease caused by Phytophthora infestans.",
+            "treatment": "Remove infected plants immediately. Apply copper-based preventative sprays."
+        }
+    }
+}
