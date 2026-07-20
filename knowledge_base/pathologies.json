@@ -1,26 +1,115 @@
 {
-    "corn": {
-        "Northern Corn Leaf Blight": {
-            "primitives": ["Necrotic-Edges", "Grey-Brown-Lesions", "Cigar-Shaped-Spots"],
-            "description": "Fungal disease causing large, cigar-shaped lesions.",
-            "treatment": "Apply fungicides containing strobilurins or triazoles."
+    "wild_vegetation": {
+        "disease_name": "Wild / Non-Commercial Vegetation",
+        "diagnosis_en": "Wild or Non-Commercial Vegetation Detected",
+        "diagnosis_hi": "जंगली / गैर-व्यावसायिक वनस्पति पहचानी गई",
+        "diagnosis_mr": "जंगली / बिगर-व्यावसायिक वनस्पती आढळली",
+        "treatment_en": "Organic Preventive Maintenance: Spray Neem oil solution (5ml/L water) every 10 days. Ensure adequate drainage and remove invasive weeds. Conduct soil pH test and apply compost as needed.",
+        "treatment_hi": "जैविक निवारक रखरखाव: नीम तेल घोल (5ml/L पानी) हर 10 दिन में छिड़कें। उचित जल निकासी सुनिश्चित करें और आक्रामक खरपतवार हटाएं। मिट्टी का pH परीक्षण करें और आवश्यकतानुसार खाद डालें।",
+        "treatment_mr": "सेंद्रिय प्रतिबंधात्मक देखभाल: दर 10 दिवसांनी कडुनिंब तेल द्रावण (5ml/L पाणी) फवारा. योग्य निचरा सुनिश्चित करा आणि आक्रमक तण काढून टाका. मातीचे pH तपासा आणि आवश्यकतेनुसार कंपोस्ट वापरा."
+    },
+    "wheat": {
+        "Rust": {
+            "primitives": ["Rusty-Pustules", "Red-Brown-Spots", "Chlorosis"],
+            "diagnosis_en": "Stem/Leaf Rust",
+            "diagnosis_hi": "तने/पत्ती का रस्ट (गेरुआ)",
+            "diagnosis_mr": "तांबेरा",
+            "treatment_en": "Apply Triazole fungicides promptly. Use resistant cultivars.",
+            "treatment_hi": "ट्रायज़ोल कवकनाशी का तुरंत उपयोग करें। प्रतिरोधी किस्मों का प्रयोग करें।",
+            "treatment_mr": "ट्रायझोल बुरशीनाशकांचा त्वरित वापर करा. रोगप्रतिकारक वाणांचा वापर करा."
         },
-        "Common Rust": {
-            "primitives": ["Rusty-Pustules", "Red-Brown-Spots", "Powdery-Spores"],
-            "description": "Fungal infection thriving in cool, moist conditions.",
-            "treatment": "Use rust-resistant hybrids and early fungicide application."
+        "Blight": {
+            "primitives": ["Bleached-Heads", "White-Spikes", "Lesion"],
+            "diagnosis_en": "Fusarium Head Blight",
+            "diagnosis_hi": "फ्यूजेरियम हेड ब्लाइट",
+            "diagnosis_mr": "फ्युसेरियम हेड ब्लाइट",
+            "treatment_en": "Increase spacing",
+            "treatment_hi": "पौधों के बीच दूरी बढ़ाएं",
+            "treatment_mr": "रोपांमधील अंतर वाढवा"
         }
     },
-    "tomato": {
-        "Powdery Mildew": {
-            "primitives": ["White-Powder-Film", "Yellowish-Patches", "Leaf-Curling"],
-            "description": "Fungal illness that looks like white powder on leaves.",
-            "treatment": "Apply sulfur-based fungicides and improve air circulation."
+    "rice": {
+        "Blight": {
+            "primitives": ["Yellow-Stripes", "Wilting", "Lesion"],
+            "diagnosis_en": "Bacterial Leaf Blight",
+            "diagnosis_hi": "जीवाणु झुलसा (बैक्टीरियल लीफ ब्लाइट)",
+            "diagnosis_mr": "करपा (बॅक्टेरियल लीफ ब्लाइट)",
+            "treatment_en": "Drain field, apply copper-based bactericides.",
+            "treatment_hi": "खेत से पानी निकालें, तांबा-आधारित जीवाणुनाशक का उपयोग करें।",
+            "treatment_mr": "शेतातील पाणी काढून टाका, तांबे-आधारित जिवाणूनाशकांचा वापर करा."
+        }
+    },
+    "corn": {
+        "Smut": {
+            "primitives": ["Galls", "Black-Powder", "Necrosis"],
+            "diagnosis_en": "Common Smut",
+            "diagnosis_hi": "कंडवा (कॉमन स्मट)",
+            "diagnosis_mr": "काणी रोग",
+            "treatment_en": "Remove galls before they burst. Practice crop rotation.",
+            "treatment_hi": "फटने से पहले गॉल्स (गांठें) को हटा दें। फसल चक्र अपनाएं।",
+            "treatment_mr": "फुटण्यापूर्वी गाठी काढून टाका. पीक फेरपालट करा."
         },
-        "Late Blight": {
-            "primitives": ["Dark-Water-Soaked-Spots", "White-Fuzzy-Growth-Underneath", "Rapid-Browning"],
-            "description": "Aggressive disease caused by Phytophthora infestans.",
-            "treatment": "Remove infected plants immediately. Apply copper-based preventative sprays."
+        "Rust": {
+            "primitives": ["Rusty-Pustules", "Orange-Spots", "Necrosis"],
+            "diagnosis_en": "Common Rust",
+            "diagnosis_hi": "कॉमन रस्ट (गेरुआ)",
+            "diagnosis_mr": "सामान्य तांबेरा",
+            "treatment_en": "Use Mancozeb",
+            "treatment_hi": "मैंकोजेब का प्रयोग करें",
+            "treatment_mr": "मँकोझेब वापरा"
+        }
+    },
+    "sugarcane": {
+        "Grassy Shoot": {
+            "primitives": ["White-Leaves", "Stunting", "Thin-Shoots", "Chlorosis"],
+            "diagnosis_en": "Grassy Shoot Disease",
+            "diagnosis_hi": "ग्रासी शूट रोग",
+            "diagnosis_mr": "गवती वाढ",
+            "treatment_en": "Uproot infected clumps. Use disease-free seed sets.",
+            "treatment_hi": "संक्रमित पौधों को उखाड़ दें। रोगमुक्त बीजों का उपयोग करें।",
+            "treatment_mr": "रोगग्रस्त बेटे उपटून टाका. निरोगी बेणे वापरा."
+        },
+        "Red Rot": {
+            "primitives": ["Red-Tissue-Inside", "White-Spots", "Drying-Leaves"],
+            "diagnosis_en": "Red Rot",
+            "diagnosis_hi": "लाल सड़न रोग",
+            "diagnosis_mr": "लाल सड (रेड रॉट)",
+            "treatment_en": "Destroy debris",
+            "treatment_hi": "अवशेषों को नष्ट करें",
+            "treatment_mr": "उसाचा पालापाचोळा नष्ट करा"
+        }
+    },
+    "grapes": {
+        "Downy Mildew": {
+            "primitives": ["White-Fuzzy-Growth-Underneath", "Yellowish-Patches", "Mildew"],
+            "diagnosis_en": "Downy Mildew",
+            "diagnosis_hi": "डाउनी फफूंदी (मृदुरोमिल आसिता)",
+            "diagnosis_mr": "केवडा / डाऊनी मिल्ड्यू",
+            "treatment_en": "Improve canopy airflow. Apply Mancozeb or Copper sprays.",
+            "treatment_hi": "पौधे में हवा का प्रवाह सुधारें। मैनकोजेब या कॉपर स्प्रे लगाएं।",
+            "treatment_mr": "वेलींमध्ये हवा खेळती ठेवा. मॅन्कोझेब किंवा कॉपर फवारणी करा."
+        }
+    },
+    "citrus": {
+        "Canker": {
+            "primitives": ["Raised-Lesions", "Yellow-Halos", "Lesion"],
+            "diagnosis_en": "Citrus Canker",
+            "diagnosis_hi": "सिट्रस कैंकर",
+            "diagnosis_mr": "कँकर (खैरया)",
+            "treatment_en": "Prune infected branches. Use copper-based bactericide.",
+            "treatment_hi": "संक्रमित शाखाओं की छंटाई करें। तांबा-आधारित जीवाणुनाशक का उपयोग करें।",
+            "treatment_mr": "रोगग्रस्त फांद्या छाटून टाका. तांबे-आधारित जिवाणूनाशक फवारा."
+        }
+    },
+    "banana": {
+        "Sigatoka": {
+            "primitives": ["Necrotic-Edges", "Cigar-Shaped-Spots", "Lesion"],
+            "diagnosis_en": "Black Sigatoka",
+            "diagnosis_hi": "ब्लैक सिगाटोका",
+            "diagnosis_mr": "सिगाटोका (करपा)",
+            "treatment_en": "Remove badly infected leaves. Use systemic fungicides like Propiconazole.",
+            "treatment_hi": "बुरी तरह संक्रमित पत्तियों को हटा दें। प्रोपिकोनाजोल जैसे प्रणालीगत कवकनाशी का उपयोग करें।",
+            "treatment_mr": "जास्त रोगग्रस्त पाने काढून टाका. प्रोपिकोनाझोल सारख्या बुरशीनाशकांचा वापर करा."
         }
     }
 }

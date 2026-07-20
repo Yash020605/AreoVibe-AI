@@ -1,5 +1,11 @@
-langgraph==0.0.15 # Use core langgraph
+langgraph==0.0.15
 onnxruntime-gpu==1.17.0
 faiss-cpu==1.7.4
 langchain-core==0.1.10
 typing-extensions>=4.7.0
+streamlit>=1.30.0
+opencv-python-headless>=4.8.0
+pillow>=10.0.0
+qrcode>=7.4.2
+plotly>=5.18.0
+pandas>=2.0.0

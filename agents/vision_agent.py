@@ -1,40 +1,53 @@
-from utils.onnx_engine import PlantPathologyONNXEngine
+from utils.heuristic_vision_engine import HeuristicVisionEngine
 from state import AgentState
 
 class VisionAgent:
     def __init__(self):
-        self.engine = PlantPathologyONNXEngine("models/yolo_plant_v8.onnx")
+        self.engine = HeuristicVisionEngine()
 
     def __call__(self, state: AgentState) -> AgentState:
-        print("[Vision Agent] Processing image:", state["image_path"])
-        
-        # If the image was flagged as blurry and deconvolved by Supervisor, we note it.
+        if "log_stream" not in state:
+            state["log_stream"] = []
+
+        def log(msg):
+            try:
+                print(msg)
+            except UnicodeEncodeError:
+                print(msg.encode("ascii", "replace").decode("ascii"))
+            state["log_stream"].append(msg)
+
+        disp_path = state['image_path'] if isinstance(state['image_path'], str) else 'ImageBytes'
+        log(f"[Vision Agent] Processing image: {disp_path}")
+
+        low_light = state.get("low_light", False)
+        if low_light:
+            log("[Vision Agent] Low-light mode active — shadow Necrosis suppression ON.")
+
         if state.get("needs_deconvolution", False):
-            print("[Vision Agent] Applying internal ONNX AI-Deconvolution prior to scan...")
-            
+            log("[Vision Agent] Applying internal ONNX AI-Deconvolution prior to scan...")
+
         is_rescan = state.get("visual_rescan_requested", False)
-        
+
         if is_rescan:
-            print("[Vision Agent] Dynamic Rescan Requested! Executing 2x Resolution deep dive.")
-            primitives = self.engine.run_dynamic_tiling_inference(state["image_path"])
+            log("[Vision Agent] Dynamic Rescan Requested! Executing deep dive.")
+            primitives = self.engine.run_dynamic_tiling_inference(state["image_bgr"], state["image_hsv"], state["image_gray"], low_light=low_light)
             state["symptom_primitives"] = primitives
             state["dense_regions_found"] += 1
-            state["visual_rescan_requested"] = False # Reset for the loop
-            print(f"[Vision Agent] Extracted Symptom Primitives: {primitives}")
+            state["visual_rescan_requested"] = False
+            log(f"[Vision Agent] Extracted Symptom Primitives: {primitives}")
             return state
 
-        # Initial Standard Scan
-        result = self.engine.analyze_tile(state["image_path"])
-        print(f"[Vision Agent] Initial scan detected anomaly: {result['anomaly_percentage'] * 100:.1f}%")
-        
+        result = self.engine.analyze_tile(state["image_bgr"], state["image_hsv"])
+        log(f"[Vision Agent] Initial scan detected anomaly: {result['anomaly_percentage'] * 100:.1f}%")
+
         if result["anomaly_percentage"] > 0.05:
-            print("[Vision Agent] Anomaly > 5%. Triggering Dynamic Tiling...")
-            primitives = self.engine.run_dynamic_tiling_inference(state["image_path"])
+            log("[Vision Agent] Anomaly > 5%. Triggering Dynamic Tiling...")
+            primitives = self.engine.run_dynamic_tiling_inference(state["image_bgr"], state["image_hsv"], state["image_gray"], low_light=low_light)
             state["symptom_primitives"] = primitives
             state["dense_regions_found"] += 1
-            print(f"[Vision Agent] Extracted Symptom Primitives: {primitives}")
+            log(f"[Vision Agent] Extracted Symptom Primitives: {primitives}")
         else:
-            print("[Vision Agent] No significant anomalies found.")
+            log("[Vision Agent] No significant anomalies found.")
             state["symptom_primitives"] = []
-            
+
         return state
