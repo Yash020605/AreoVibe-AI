@@ -1,5 +1,5 @@
 langgraph==0.0.15
-onnxruntime-gpu==1.17.0
+onnxruntime
 faiss-cpu==1.7.4
 langchain-core==0.1.10
 typing-extensions>=4.7.0
