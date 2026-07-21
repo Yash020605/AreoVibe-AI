@@ -1,6 +1,6 @@
 langgraph==0.0.15
 onnxruntime
-faiss-cpu==1.7.4
+faiss-cpu
 langchain-core==0.1.10
 typing-extensions>=4.7.0
 streamlit>=1.30.0
