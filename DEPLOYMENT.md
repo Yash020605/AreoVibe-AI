@@ -21,7 +21,18 @@ If you are running the application on a ruggedized laptop or edge server at the 
    ```
    *(You can find the exact IP under the "Data Intake" section in the app sidebar).*
 
-## 2. Cloud Deployment (AWS / GCP / DigitalOcean)
+## 2. Streamlit Community Cloud (Free / Serverless)
+
+The absolute easiest way to deploy AeroVibe AI globally for free is through Streamlit Community Cloud. This bypasses the need for Docker completely.
+
+1. Go to [share.streamlit.io](https://share.streamlit.io/) and log in with your GitHub account.
+2. Click **"New app"**.
+3. Select your repository (`Yash020605/AreoVibe-AI`), branch (`main`), and main file path (`app.py`).
+4. Click **"Deploy!"** 
+
+Streamlit will automatically read the `requirements.txt` file and handle all the hosting infrastructure for you.
+
+## 3. Cloud Deployment (AWS / GCP / DigitalOcean)
 
 To deploy AeroVibe AI as a centralized web platform accessible from anywhere:
 
